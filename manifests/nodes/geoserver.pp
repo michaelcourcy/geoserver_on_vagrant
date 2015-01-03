@@ -37,9 +37,18 @@ node 'geoserver' {
       'proxyPort' => '80',
       'proxyName' => '192.168.33.10',
     },
-  } -> tomcat::war {'geoserver.war':
+  } 
+  # extract the zip before the war as geoserver does not propose a direct link to a war.
+  -> staging::file { 'geoserver-2.5.4-war.zip':
+    source => 'http://softlayer-ams.dl.sourceforge.net/project/geoserver/GeoServer/2.5.4/geoserver-2.5.4-war.zip',
+  }
+  -> staging::extract { 'geoserver-2.5.4-war.zip':
+    target  => '/opt/staging',
+    creates => '/opt/staging/geoserver.war', #don't extract if this war already exist    
+  }
+  -> tomcat::war {'geoserver.war':
     catalina_base => '/appli/tomcat',
-    war_source => 'http://softlayer-ams.dl.sourceforge.net/project/geoserver/GeoServer/2.5.4/geoserver-2.5.4-war.zip'
+    war_source => '/opt/staging/geoserver.war'
   } -> tomcat::service { 'tommaps': 
     catalina_base => '/appli/tomcat',
   }
