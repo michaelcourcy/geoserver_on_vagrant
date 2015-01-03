@@ -1,0 +1,32 @@
+##2014-12-09 - Version 1.1.0
+
+- Add future parser tests
+- Convert specs to rspec3 syntax
+- Fix metadata.json
+
+##2014-11-17 - Version 1.0.3
+
+- Lint metadata.json
+
+##2014-11-04 - Version 1.0.2
+
+- Fix path in unit tests
+- Drop Puppet 2.7 support
+
+##2014-10-28 - Version 1.0.1
+- Add path to exec in augeas::lens
+
+##2014-10-20 - Version 1.0.0
+- Linting
+- Setup automatic Forge releases
+
+##2014-10-06 - Version 0.3.2
+- Remove symlink in spec/ directory (Fix #40)
+
+##2014-09-23 - Version 0.3.1
+- Centralize metadata files
+
+##2014-07-02 - Version 0.3.0
+###Summary
+- Add purge parameter
+- Cleanup unscoped variables
