@@ -1,9 +1,0 @@
-version = 2.5.4
-git revision = 53b5c183d22e4149117e91cfd988063b105fbc1d
-git branch = rel_2.5.4
-build date = 22-Dec-2014 19:31
-geotools version = 11.4
-geotools revision = 2fc34550f140d5a4b808dd0982b6f93b7246029a
-geowebcache version = 1.5.4
-geowebcache revision = d1eaa8c2e260ab96c7037268d24e1963db476d62/d1eaa
-hudson build = -1
