@@ -36,6 +36,23 @@ Suspend the machine
  
     vagrant destroy
 
+Troubleshooting
+---------------
+This process download a lot of file, and network in not always reliable you may have this kind of message 
+
+   Error: /Stage[main]//Node[geoserver]/Tomcat::Instance[tommaps]/
+   Tomcat::Instance::Source[tommaps]/Staging::File[apache-tomcat-7.0.57.tar.gz]
+   /Exec[/opt/staging/tomcat/apache-tomcat-7.0.57.tar.gz]/returns: change 
+   from notrun to 0 failed: curl  -f -L -o /opt/staging/tomcat/
+   apache-tomcat-7.0.57.tar.gz http://mirrors.ircam.fr/pub/apache/tomcat
+   /tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.tar.gz returned 6 instead 
+   of one of [0]
+
+Which means curls didnt't resolve mirrors.ircam.fr, in this case retry the provisionning 
+
+   vagrant reload --provision
+
+
 
 
 
